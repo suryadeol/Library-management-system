@@ -1,0 +1,437 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+int main()
+{
+    fflush(stdin);
+ fflush(stdout);
+    int take;
+    char str[50];
+   struct info
+   {
+       int t;
+       char name[100];
+       char branch[100];
+       char roll[50];
+   };
+   struct info e[50];
+   struct book
+    {
+        char name[50];
+        char authour[50];
+        char about[50];
+        char edition[50];
+          char id[50];
+          char location[20];
+    };
+    struct book e1[50];
+      struct info1
+        {
+       char roll1[50];
+       char name1[100];
+       char branch1[100];
+       char book_id1[20];
+       char taken_date1[12];
+       char return_date1[20];
+       char fine_details1[10];
+        };
+        struct info1 e2[50];
+
+       struct info2
+        {
+       char roll2[50];
+       char name2[100];
+       char branch2[100];
+      char book_id2[20];
+       char taken_date2[10];
+       char return_date2[10];
+       char fine_details2[10];
+        };
+
+        struct info2 e3[50];
+          struct info3
+        {
+
+       char roll3[50];
+         char name3[100];
+         char branch3[100];
+       char id3[20];
+       char taken_date3[20];
+        };
+        struct info3 e4[50];
+         struct info4
+        {
+
+       char roll4[50];
+         char name4[100];
+         char branch4[100];
+       char id4[20];
+       char taken_date4[20];
+        };
+ struct info4 e5[50];
+   int i,start,start1,start2,data,see,see1,len=0,len1=0,len2=0,new2,return1,j,n,n1,n3;
+   char GI[15];
+    char str2[20];
+       char strf[20];
+   FILE *p,*q,*p1,*p2,*p3;
+   p=fopen("registration","a+");
+   if(p==NULL)
+   {
+       perror("not valid to open\n");
+   }
+   q=fopen("books","a+");
+    if(q==NULL)
+    {
+        printf("not able to open\n");
+    }
+    p2=fopen("modbook","a+");
+    if(p2==NULL)
+
+    {
+               printf("unable to open\n");
+    }
+    p1=fopen("regtohome","a+");
+    if(p1==NULL)
+    {
+            perror("not able to open\n");
+    }
+p3=fopen("local registration","a+");
+  if(p3==NULL)
+    {
+            printf("unable to open\n");
+    }
+   printf("***************WELCOME TO LBRCE LIBRARY STUDENTS REGISTRATION**************************************************\n");
+   printf("if you need to start registration press '1',otherwise '2' \n");
+   printf("otherwise '0' to go to registered portal\n");
+    scanf("%d",&start);
+     dummy0:gets(e[i].roll);
+   if(start==1)
+   {
+  printf("enter no.of people \n");
+     scanf("%d",&n);
+      dummy1: gets(e[i].roll);
+   printf("registration process is going on\n");
+    for(i=1;i<=n;i++)
+  {
+      printf("*************enter details***************\n");
+       printf("**************enter roll number***************\n");
+      gets(e[i].roll);
+      printf("*************enter name**********************\n");
+      gets(e[i].name);
+      printf("**************enter branch********************\n");
+      gets(e[i].branch);
+
+      printf("********************************************************\n");
+  }
+  printf("details are storing\n");
+
+ for(i=1;i<=n;i++)
+  {
+      fprintf(p,"%s\n",e[i].roll);
+      fprintf(p," %s\n",e[i].name);
+      fprintf(p," %s\n",e[i].branch);
+      fflush(p);
+  }
+  }
+  else if(start==0)
+  {
+      printf("enter 3 to move to registered data\n");
+      scanf("%d",&data);
+        dummy2:gets(GI);
+   if(data==3)
+  {
+
+      printf("****************REGISTERD  DATA*********************\n");
+      printf("enter roll number\n");
+       gets(GI);
+      for(i=1;i>0;i++)
+      {
+         fscanf(p,"%[^\n]",&e[i].roll);
+         dummy5: fgets(e[i].name,100,p);
+          fgets(e[i].name,100,p);
+          fgets(e[i].branch,100,p);
+        if(strcmp(GI,e[i].roll)==0)
+          {
+              printf("gathering required details from %d:\n",i);
+        printf("roll number is:%s\n",e[i].roll);
+          printf(" name is:%s\n",e[i].name);
+          printf(" branch is:%s\n",e[i].branch);
+         }
+         printf("deatils are not found in %d",i);
+    }
+
+  }
+}
+
+printf("if you need go to book entry press 2\n");
+  printf("enter '3' to add books into libraray \n");
+scanf("%d",&start1);
+if(start1==2)
+{
+    printf("************WELCOME TO LIBRARY BOOK PORTAL**********************\n");
+printf("enter 1 to search books \n");
+scanf("%d",&see);
+if(see==1)
+{  printf("enter name of the book\n");
+         dummy3:gets(str);
+           gets(str);
+       for(j=1;j>0;++j)
+        {
+           fscanf(q,"%[^\n]",e1[j].name);
+            fgets(e1[i].authour,50,q);
+            fgets(e1[j].authour,50,q);
+         fgets(e1[j].about,50,q);
+           fgets(e1[j].edition,50,q);
+           fgets(e1[j].id,10,q);
+           fgets(e1[j].location,20,q);
+          len=strcmp(str,e1[j].name);
+        if(len==0)
+        {
+        printf("**************getting required details************\n");
+       printf("avalabile in %d you can carry on\n",j);
+        printf("the book name is:%s\n",e1[j].name);
+        printf("the authour name:%s\n",e1[j].authour);
+       printf("the book is about:%s\n",e1[j].about);
+        printf("the edition of the book is:%s\n",e1[j].edition);
+        printf("the id of the book is:%s\n",e1[j].id);
+       printf("the location of the book is:%s\n",e1[j].location);
+       printf("***********************thank you**************\n");
+    printf("enter '1' to take book to home\n");
+       printf("enter '0' to read here\n");
+        scanf("%d",&take);
+   if(take==1)
+     {
+        printf("******************ONCE AGAIN WELCOME TO REGISTRATION PORTAL********************\n");
+
+        printf("******************ONCE AGAIN WELCOME TO REGISTRATION PORTAL********************\n");
+        printf("enter 1 for new registration to take book home\n");
+        printf("enter 0 to modify registration\n");
+        scanf("%d",&new2);
+        dummy4: gets(e2[i].roll1);
+        if(new2==1)
+        {
+        printf("enter number of students\n");
+        scanf("%d",&n1);
+         dummy16:gets(e2[i].roll1);
+        for(i=1;i<=n1;i++)
+        {
+            printf("enter roll number\n");
+            gets(e2[i].roll1);
+            printf("enter name\n");
+            gets(e2[i].name1);
+          printf("enter branch\n");
+            gets(e2[i].branch1);
+        printf("enter book id\n");
+           gets(e2[i].book_id1);
+            printf("enter taken date\n");
+            gets(e2[i].taken_date1);
+            printf("enter return date\n");
+            gets(e2[i].return_date1);
+            printf("enter fine details\n");
+            gets(e2[i].fine_details1);
+
+        }
+        for(i=1;i<=n1;i++)
+        {
+            fprintf(p1,"%s\n",e2[i].roll1);
+            fprintf(p1,"%s\n",e2[i].name1);
+       fprintf(p1,"%s\n",e2[i].branch1);
+           fprintf(p1,"%s\n",e2[i].book_id1);
+            fprintf(p1,"%s\n",e2[i].taken_date1);
+            fprintf(p1,"%s\n",e2[i].return_date1);
+            fprintf(p1,"%s\n",e2[i].fine_details1);
+            fflush(p1);
+        }
+        printf("data is printed\n");
+        }
+         if(new2==0)
+     {
+        printf("enter '3' to enter return details\n");
+        printf("enter '2' to see return details\n");
+        scanf("%d",&return1);
+          dummy6: gets(str2);
+   if(return1==3)
+    {
+           printf("enter roll no\n");
+            gets(str2);
+           for(i=1;i>0;i++)
+           {
+               fscanf(p1,"%[^\n]",e3[i].roll2);
+              dummy7:  fgets(e3[i].name2,50,p1);
+              fgets(e3[i].name2,50,p1);
+               fgets(e3[i].branch2,20,p1);
+             fgets(e3[i].book_id2,20,p1);
+               fgets(e3[i].taken_date2,30,p1);
+                fgets(e3[i].return_date2,30,p1);
+                fgets(e3[i].fine_details2,20,p1);
+        len1=strcmp(str2,e3[i].roll2);
+        if(len1==0)
+        {
+
+            printf("%s\n",e3[i].roll2);
+            printf("%s\n",e3[i].name2);
+            printf("%s\n",e3[i].branch2);
+            printf("%s\n",e3[i].book_id2);
+            printf("%s\n",e3[i].taken_date2);
+printf("enter return date\n");
+              gets(e3[i].return_date2);
+            printf("enter fine details\n");
+            gets(e3[i].fine_details2);
+             fprintf(p2,"%s\n",e3[i].roll2);
+            fprintf(p2,"%s\n",e3[i].name2);
+            fprintf(p2,"%s\n",e3[i].branch2);
+            fprintf(p2,"%s\n",e3[i].book_id2);
+            fprintf(p2,"%s\n",e3[i].taken_date2);
+            fprintf(p2,"%s\n",e3[i].return_date2);
+            fprintf(p2,"%s\n",e3[i].fine_details2);
+            fflush(p2);
+        }
+           }
+        }
+           if(return1==2)
+           {
+               char str3[15];
+               printf("enter roll number\n");
+             gets(str3);
+                for(i=1;i>0;i++)
+               {
+               fscanf(p2,"%[^\n]",e3[i].roll2);
+               dummy8:  fgets(e3[i].name2,50,p2);
+                   fgets(e3[i].name2,50,p2);
+              dummy9: fgets(e3[i].branch2,20,p2);
+                fgets(e3[i].branch2,20,p2);
+                dummy10: fgets(e3[i].book_id2,20,p2);
+               fgets(e3[i].book_id2,20,p2);
+               dummy11:fgets(e3[i].taken_date2,30,p2);
+                    fgets(e3[i].taken_date2,30,p2);
+               dummy12:  fgets(e3[i].return_date2,30,p2);
+                    fgets(e3[i].return_date2,20,p2);
+                    fgets(e3[i].fine_details2,20,p2);
+                  len1=strcmp(str3,e3[i].roll2);
+                  if(len1==0)
+                  {
+            printf("the roll number of the student is:%s\n",e3[i].roll2);
+            printf("the name of the student is:%s\n",e3[i].name2);
+            printf("the branch of the student:%s\n",e3[i].branch2);
+          printf("the book id is:%s\n",e3[i].book_id2);
+            printf("taken date:%s\n",e3[i].taken_date2);
+            printf("return date :%s\n",e3[i].return_date2);
+            printf("fine details are:%s\n",e3[i].fine_details2);
+            fflush(stdout);
+                  }
+           }
+           }
+
+        }
+     }
+        if(take==0)
+    {
+        printf("********************ONCE AGAIN WELCOME TO REGISTRATION PORTAL************************\n");
+       printf("enter number of stundents\n");
+        printf("enter '0' if no one is their\n");
+        scanf("%d",&n3);
+      dummy14: gets(e4[i].roll3);
+        for(i=1;i<=n3;i++)
+        {
+            printf("enter roll number\n");
+            gets(e4[i].roll3);
+            printf("enter name\n");
+            gets(e4[i].name3);
+            printf("enter branch\n");
+            gets(e4[i].branch3);
+            printf("enter book id\n");
+            gets(e4[i].id3);
+            printf("enter taken date\n");
+            gets(e4[i].taken_date3);
+        }
+        for(i=1;i<=n3;i++)
+        {
+            fprintf(p3,"%s\n",e4[i].roll3);
+            fprintf(p3,"%s\n",e4[i].name3);
+            fprintf(p3,"%s\n",e4[i].branch3);
+            fprintf(p3,"%s\n",e4[i].id3);
+            fprintf(p3,"%s\n",e4[i].taken_date3);
+            fflush(p3);
+        }
+
+
+printf("enter 0 to see your all local  registrations\n");
+printf("enter 1 to leave\n");
+scanf("%d",&start2);
+       dummy15:gets(strf);
+        if(start2==0)
+        {
+
+            printf("enter roll number\n");
+            gets(strf);
+            for(i=1;i>0;i++)
+            {
+                fscanf(p3,"%[^\n]",e5[i].roll4);
+               fgets(e5[i].name4,50,p3);
+                fgets(e5[i].name4,50,p3);
+               fgets(e5[i].branch4,50,p3);
+               fgets(e5[i].id4,50,p3);
+                fgets(e5[i].taken_date4,50,p3);
+          len2= strcmp(strf,e5[i].roll4);
+          if(len2==0)
+                {
+            printf("the roll number is:%s\n",e5[i].roll4);
+            printf("the name of the student is:%s\n",e5[i].name4);
+            printf("the branch of the student:%s\n",e5[i].branch4);
+            printf("the book id is:%s\n",e5[i].id4);
+            printf("the taken date is:%s\n",e5[i].taken_date4);
+                }
+            }
+        }
+         if(start2==1)
+        {
+            printf("thanks you can leave\n");
+        }
+
+
+
+    }
+  //  printf("books not avalible in %d block\n",j);
+
+
+}
+}
+}
+
+
+
+if(start1==3)
+    {
+        printf("enter number of books ,which are as new\n");
+    scanf("%d",&see1);
+          dummy13:gets(e1[i].name);
+         for(i=1;i<=see1;i++)
+         {
+        printf("enter name of the book\n");
+        gets(e1[i].name);
+        printf("authour name\n");
+       gets(e1[i].authour);
+       printf("about\n");
+        gets(e1[i].about);
+        printf("edtion\n");
+        gets(e1[i].edition);
+        printf("id\n");
+        gets(e1[i].id);
+       printf("enter location of book to place\n");
+       gets(e1[i].location);
+         }
+         for(i=1;i<=see1;i++)
+         {
+             fprintf(q,"%s\n",e1[i].name);
+             fprintf(q,"%s\n",e1[i].authour);
+             fprintf(q,"%s\n",e1[i].about);
+             fprintf(q,"%s\n",e1[i].edition);
+             fprintf(q,"%s\n",e1[i].id);
+           fprintf(q,"%s\n",e1[i].location);
+             fflush(q);
+         }
+    }
+    printf("thanks for using,'HAVE A GREAT DAY'\n ");
+}
+}
